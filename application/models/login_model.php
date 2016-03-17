@@ -1,27 +1,10 @@
 <?php
-class Login extends CI_Model
+class Login_model extends CI_Model
 {
-function login_model($data)
+    public function isAdmin($login)
     {
-      $this -> db -> select('*');
-      $this -> db -> from('admin');
-      $this -> db -> where($data);
-      $this -> db -> limit(1);
-
-      $query = $this -> db -> get();
-
-      if($query -> num_rows() == 1)
-      {
-        return $query->result();
-      }
-      else
-      {
-        return false;
-      }
-    }
-    public function isAdmin($logindata)
-    {
-        $querydb1 = $this->db->select('*')->from("admin")->where('username',$logindata['username'])->where('password',$logindata['pass']);
+        $this->load->database();
+        $querydb1 = $this->db->select('*')->from("admin")->where('username',$login['username'])->where('password',$login['password']);
         $querydb = $querydb1->get();
         $result = $querydb->result();
         return $result;

@@ -15,3 +15,8 @@
 
 /* End of file profiler.php */
 /* Location: ./application/config/profiler.php */
+
+$config['config']           = TRUE;
+$config['queries']          = TRUE;
+$config['post']             = TRUE;
+$config['get']             = TRUE;

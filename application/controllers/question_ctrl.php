@@ -16,7 +16,8 @@ class Question_ctrl extends CI_Controller {
             $this->load->view('admin/question/add_question');
             $this->load->view('admin/layout/footer.php');
       	}
-         public function  del_question()
+                   
+        public function  del_question()
         {
         $id = $this->uri->segment(3);
         $this->load->model("question_model");
